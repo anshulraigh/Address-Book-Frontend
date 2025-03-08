@@ -1,0 +1,77 @@
+.container {
+  padding:2px 40px;
+  background-color: rgb(247,247,247);
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-person-btn {
+  background-color: rgb(0,140,255);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Table Header Styling */
+.table-header {
+  display: flex;
+  padding: 12px;
+  font-weight: bold;
+  color: rgb(169,184,193);
+  border-radius: 5px;
+}
+
+/* Dynamic Row Structure */
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.person-row {
+  display: flex;
+  background: white;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  border: 1px solid #ddd;
+}
+
+.person-row:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Consistent Column Widths */
+.cell {
+  padding: 5px;
+}
+
+/* Adjusted Column Widths to Match Headers */
+.col-name { flex: 1.2; }
+.col-address { flex: 2; }
+.col-city { flex: 1; }
+.col-state { flex: 1; }
+.col-zip { flex: 1; }
+.col-phone { flex: 1.2; }
+.col-actions { flex: 0.5; display: flex; gap: 10px; justify-content: center; }
+
+/* Action Buttons */
+.edit-btn, .delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.edit-btn .material-icons, 
+.delete-btn .material-icons {
+  color: rgb(169,184,193);
+}

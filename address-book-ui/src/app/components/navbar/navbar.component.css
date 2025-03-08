@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding:2px 40px;
+    background: #fff;
+  }
+  
+  .logo {
+    padding: 4px 0px 4px 0px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .book-logo {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .blue-text {
+    color: rgb(33,155,255);
+  }
+  
+  .black-text {
+    color: rgb(112,124,134);
+  }
+  

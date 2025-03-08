@@ -1,0 +1,38 @@
+<div class="container">
+  <!-- Page Header -->
+  <div class="header">
+    <h3 style="color: rgb(112,124,134);">Person Details</h3>
+    <button class="add-person-btn" (click)="addPerson()">+ Add Person</button>
+  </div>
+
+  <!-- Column Headers -->
+  <div class="table-header">
+    <div class="cell col-name">Full Name</div>
+    <div class="cell col-address">Address</div>
+    <div class="cell col-city">City</div>
+    <div class="cell col-state">State</div>
+    <div class="cell col-zip">Zipcode</div>
+    <div class="cell col-phone">Phone Number</div>
+    <div class="cell col-actions"></div>
+  </div>
+
+  <!-- Dynamic List -->
+  <div class="person-list">
+    <div class="person-row" *ngFor="let person of persons; let i = index">
+      <div class="cell col-name">{{ person.name }}</div>
+      <div class="cell col-address">{{ person.address }}</div>
+      <div class="cell col-city">{{ person.city }}</div>
+      <div class="cell col-state">{{ person.state }}</div>
+      <div class="cell col-zip">{{ person.zipcode }}</div>
+      <div class="cell col-phone">{{ person.phoneNumber }}</div>
+      <div class="cell col-actions">
+        <button class="edit-btn" (click)="editPerson(i)">
+          <span class="material-icons">edit</span>
+        </button>
+        <button class="delete-btn" (click)="deletePerson(i)">
+          <span class="material-icons">delete</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

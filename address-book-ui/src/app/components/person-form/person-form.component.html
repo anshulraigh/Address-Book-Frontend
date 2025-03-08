@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="form-header">
+    <h2>PERSON ADDRESS FORM</h2>
+    <button class="close-btn" (click)="closeForm()">
+      <span class="material-icons">close</span>
+    </button>
+  </div>
+
+  <form class="input-container">
+    <label>Full Name</label>
+    <input type="text" name="name" [(ngModel)]="person.name" />
+
+    <label>Phone Number</label>
+    <input type="text" name="phoneNumber" [(ngModel)]="person.phoneNumber" />
+
+    <label>Address</label>
+    <textarea name="address" [(ngModel)]="person.address" rows="3"></textarea>
+
+    <div class="row">
+      <div class="col">
+        <label>State</label>
+        <select name="state" [(ngModel)]="person.state" (change)="updateCities()">
+          <option *ngFor="let state of states" [value]="state.name">
+            {{ state.name }}
+          </option>
+          <!-- <option value="Other">Other</option> -->
+        </select>
+        <!-- <input
+          *ngIf="isOtherState"
+          type="text"
+          [(ngModel)]="manualState"
+          placeholder="Enter State Name"
+        /> -->
+      </div>
+
+      <div class="col">
+        <label>City</label>
+        <select *ngIf="!isOtherState && !isOtherCity" name="city" [(ngModel)]="person.city" (change)="checkOtherCity()">
+          <option *ngFor="let city of cities" [value]="city">
+            {{ city }}
+          </option>
+          <!-- <option value="Other">Other</option> -->
+        </select>
+
+        <!-- <input
+          *ngIf="isOtherCity || isOtherState"
+          type="text"
+          [(ngModel)]="manualCity"
+          placeholder="Enter City Name"
+        /> -->
+      </div>
+
+      <div class="col">
+        <label>Zipcode</label>
+        <input type="text" name="zipcode" [(ngModel)]="person.zipcode" />
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button
+        class="add-btn"
+        (mouseover)="hoverAdd = true"
+        (mouseleave)="hoverAdd = false"
+        [style.backgroundColor]="hoverAdd ? 'rgb(0,140,255)' : 'gray'"
+        (click)="addPerson()"
+      >
+        Add
+      </button>
+
+      <button
+        class="reset-btn"
+        (mouseover)="hoverReset = true"
+        (mouseleave)="hoverReset = false"
+        [style.backgroundColor]="hoverReset ? 'darkgray' : 'gray'"
+        (click)="resetForm()"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
